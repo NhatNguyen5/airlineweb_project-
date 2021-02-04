@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+		<!-- style file -->
+		<link rel="stylesheet" href="otherpages.css">
+		
+		<div class="header_banner">
+			<p class="header_banner"><b>| COSC3380: Database ER design, Normalization and Web App | An Airline Database System |</b>
+			<br><i>Instructor: Carlos Ordonez</i>
+		</div>
+		<br>
+	</head>
+<!--This is a comment-->
+	<body>
+		<div id="no_blur">
+			<div id="nav_bar">
+				<form action="flight.html"><button class="nav_bar_button Flight">Flight</button></form>
+				<form action="customer.html"><button class="nav_bar_button Customer">Customer</button></form>
+				<!--<form action="book.html"><button class="nav_bar_button Book">Book</button></form>-->
+				<form action="search.html"><button class="nav_bar_button Search">Search</button></form>
+				<!--<form action="ticket_price.html"><button class="nav_bar_button Ticket_price">Ticket price</button></form>-->
+			</div>
+		</div>
+		<div id="body_container">
+			<div id="body_contents">
+				<table class="bookTable">
+				<!--Recieve from search-->
+					<tr>
+						<th>Flight No</th>
+						<th>From</th>
+						<th>To</th>
+						<th>Departure time</th>
+						<th>Arrival time</th>
+						<th>No of Seats</th>
+					</tr>
+					<tbody id="book_display">
+					</tbody>
+				</table>
+				<div class=airplane_layout_border>
+					<a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" id="airplane_layout">Airplane map<img src="images/airplane_layout.png"></a>
+				</div>
+				<!--form for booking-->
+				<div class="purchase">
+					<div class="sum_box">
+						<div class="form-style-1">
+							<div class="sum_box_content">
+								<div class="sum_box_header">
+									<h5 class="sum-box_title" style="text-align: center; margin: auto;"><b>Total Price</b></h5>
+									<hr style="border-color: black; border-width: 3px;">
+								</div>
+								<div class="price_section">
+									<div class="price_section_name">
+										<div id="purchase_tag">
+											
+										</div>
+										<div id="tAd">
+											<br>
+											<div><b>Total:</b></div>
+											<div><b>Discount:</b></div>
+											<div><b>Tax (after discount):</b></div>
+										</div>
+									</div>
+									<div class="price_section_number" id="price_number">
+										<div id="purchase_price">
+											
+										</div>
+										<div id="tAd_price">
+											<br>
+											<div>-$0.00</div>
+											<div>+$0.00</div>
+										</div>
+									</div>
+								</div>
+								<hr style="border-color: black; border-width: 3px;">
+								<div class="price_section">
+									<div class="price_section_name">
+										<p style="font-size: 15px; font-weight: bold;">Total:</p>
+									</div>
+									<div class="price_section_number" id="final_total">
+										<p>$0.00</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="space_box">
+					</div>
+					<div class="form_box">
+						<div id="registrationForm">
+							<ul class="form-style-1">
+								<div id="Passengers">
+									<div id="Passenger_0" name=0>
+										<form id="PassengerForm_0">
+											<li><label>Full Name of Passenger <span class="required">*</span></label><input id = "fname0" type="text" onkeyup="checkAllForm()" name="field1" class="field-divided" placeholder="First" />&nbsp;<input id = "lname0" type="text" name="field2" onkeyup="checkAllForm()" class="field-divided" placeholder="Last" /></li>
+											<li>
+												<label>Email <span class="required">*</span></label>
+												<input id = "femail0" type="email" onkeyup="checkAllForm()"name="field3" class="field-long" />
+											</li>
+											<li>
+												<label>Phone <span class="required">*</span></label>
+												<input id = "fphone0" type="phone" onkeyup="checkAllForm()" name="field4" class="field-long" />
+											</li>
+											<li>
+												<label>Class<span class="required">*</span></label>
+											<select id="fclass0" type="fare_condtion" onchange="totalCalculation();checkAllForm();keepClass(0);selectSeats(0);selectAllSeats(0);checkIfSeatSelected();" name="field5" class="field-select">
+												<option style="color: gray;" value=0>Select your class</option>
+												<option value="Comfort">Comfort</option>
+												<option value="Business">Business</option>
+												<option value="Economy">Economy</option>
+												</select>
+											</li>
+											<li>
+												<label>Seats<span class="required">*</span></label>
+												<select id="fseat0" type="seat" onchange="totalCalculation();checkAllForm();selectSeats(0);selectAllSeats(0);checkIfSeatSelected();" name="field6" class="field-select">
+													
+												<option style="color: gray;" value=0>Select your seat</option>
+
+												</select>
+											</li>
+											<hr style="border-color: black">
+											<li id="addButton0">
+												<button type="button" onClick="addPassenger()">Add a passenger</button>
+											</li>
+										</form>
+									</div>
+								</div>
+								
+								<li>
+									<input type="submit" id ="register" value="Submit" data-toggle="modal" data-target="#edit-modal" onClick="confirmationTab()"/>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- the popup modal, used for update the todo description -->
+		<div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="edit-todo-label" style="align-items: center; margin: auto;">Confirm your booking?</h5>
+				  <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button> -->
+				</div>
+				<div class="form-style-1">
+					<label> Card number <span class="required">*</span></label><input id = "cardNumber" type="text" onkeyup="" name="field1" class="field-divided" placeholder="Card number" />&nbsp;<input id = "CCV" type="text" name="field2" onkeyup="" class="field-divided" placeholder="CCV" /></li>
+				</div>
+				<div class="modal-footer" style="justify-content: space-between;align-items: center;margin-left: 20%;margin-right: 20%;">
+				  <!-- <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button> -->
+				  <button type="button" class="btn btn-danger" id="no">No, abort!</button>
+				  <button type="button" class="btn btn-primary" id="yes">Yes, book it!</button>  
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <!-- end of model -->
+
+		<footer><a href="About_us.html">About us!</a></footer>
+	</body>
+<script src="airlineweb.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script>
+</html>

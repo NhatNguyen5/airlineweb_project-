@@ -1,0 +1,336 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.header_banner {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    height: 4vw;
+    text-align: center;
+    background-color: rgb(250, 86, 86);
+    color: white;
+    font-size: 0.8vw;
+    letter-spacing: 0.4vw;
+    z-index: 2;
+}
+
+#nav_bar {
+    z-index: 1;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6vw;
+    padding-left: 17vw;
+    padding-right: 17vw;
+    background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom:2vw;
+    box-shadow: 0vw 0px 1vw 1vw whitesmoke;
+}
+
+#no_blur {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom:1vw;
+    overflow: hidden;
+}
+
+#nav_bar .nav_bar_button {
+    height: 4vw;
+    width: 21vw;
+    font-size: 1.8vw;
+    display: inline-block;
+    border-radius: 20px 5px;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#nav_bar .nav_bar_button:hover {
+    height: 5vw;
+    width: 22vw;
+    text-decoration: underline;
+    box-shadow: 0.1vw 0.2vw 0.3vw #333;
+}
+
+.Flight {
+    background-color: blue;
+}
+
+.Customer {
+    background-color: gold;
+}
+
+.Search {
+    background-color: orange;
+}
+
+.Ticket_price {
+    background-color: green;
+}
+
+.Home {
+    background-color: red;
+}
+
+body {
+    position: relative;
+    top: 2vw;
+    margin: 0px;
+    padding: 0px;
+    background-image: linear-gradient(-20deg, #c71d6f 0%, #d09693 100%);
+}
+
+#body_container {
+    position: relative;
+    top: -4vw;
+    padding: 4vw;
+    background-image: linear-gradient(-20deg, #c71d6f 0%, #d09693 100%);
+}
+
+#body_contents {
+    border: black;
+    border-style: double;
+    border-radius: 1vw;
+    padding: 1vw;
+    background-color: white;
+}
+
+.airplane_layout_border {
+    text-align: center;
+    display: block;
+    margin-top: 1vw;
+}
+
+#airplane_layout {
+    color: rgb(62, 62, 247);
+    text-decoration: underline;
+    text-align: center;
+    display: inline-block;
+    border: solid rgb(121, 119, 119);
+    border-width: 2px;
+    padding: 0.5vw;
+    border-radius: 1vw;
+}
+
+#airplane_layout img {
+    display: none;
+}
+#airplane_layout:hover img{
+    cursor: pointer;
+    display: block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+.form-style-1 {
+    margin:10px auto;
+    padding: 20px 12px 10px 20px;
+    font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-1 li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+.form-style-1 label{
+    margin:0 0 3px 0;
+    padding:0px;
+    display:block;
+    font-weight: bold;
+}
+.form-style-1 input[type=text], 
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+.form-style-1 input[type=phone],
+textarea, 
+select{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    /* -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out; */
+    outline: none;	
+}
+.form-style-1 input[type=text]:focus, 
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 input[type=phone]:focus,
+.form-style-1 textarea:focus, 
+.form-style-1 select:focus{
+    -moz-box-shadow: 0 0 8px #88D5E9;
+    -webkit-box-shadow: 0 0 8px #88D5E9;
+    box-shadow: 0 0 8px #88D5E9;
+    border: 1px solid #88D5E9;
+}
+.form-style-1 .field-divided{
+    width: 49%;
+}
+
+.form-style-1 .field-long{
+    width: 100%;
+}
+.form-style-1 .field-select{
+    width: 100%;
+}
+.form-style-1 .field-textarea{
+    height: 100px;
+}
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+    background: #4B99AD;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+}
+.form-style-1 button{
+    background: #4B99AD;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+    margin:0 auto;
+    display:block;
+}
+.form-style-1 button:hover{
+    background: #4691A4;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+}
+
+.form-style-1 .remove_button{
+    background: rgba(247, 42, 42, 0.781);
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+    margin:0 auto;
+    display:block;
+}
+.form-style-1 .remove_button:hover{
+    background: rgb(248, 18, 18);
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+}
+
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+    background: #4691A4;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+}
+.form-style-1 .required{
+    color:red;
+}
+
+.purchase {
+    display: flex;
+    padding: 1.5vw;
+}
+
+.sum_box {
+    flex: 1 1 0;
+    border: black;
+    border-style: double;
+    border-radius: 1vw;
+    padding: 1vw;
+}
+
+.price_section {
+    display: flex;
+}
+
+.price_section_name {
+    flex: 1;
+    padding: 0;
+}
+
+.price_section_number {
+    flex: 1;
+    font-weight: bold; 
+    text-align: right;
+}
+
+#final_total{
+    flex: 1;
+    font-weight: bold; 
+    text-align: right;
+    font-size: 15px;
+}
+
+.space_box {
+    flex: 0.01 1 0;
+}
+
+.form_box {
+    flex: 2.5 1 0;
+    border: black;
+    border-style: double;
+    border-radius: 1vw;
+    padding: 1vw;
+}
+
+.from_to {
+    font-weight: bold;
+    display: inline-block;
+}
+
+.dep_arrTime {
+    font-weight: bold;
+    display: inline-block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 0.3vw double #dddddd;
+    text-align: left;
+    padding: 0.4vw;
+}
+
+footer {
+    background-color: #111111;
+    color: #eeeeee;
+    border-top: 1px solid red;
+    font-size: 1.5vw;
+    height: 4.5vw;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: -4vw;
+    width: 100%;
+    bottom: 0;
+}
